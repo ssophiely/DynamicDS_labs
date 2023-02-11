@@ -127,8 +127,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Lab1_2_Lakeeva.cpp" />
-    <ClCompile Include="SetLab1_2_Lakeeva.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="FuncDefinition.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header.h" />

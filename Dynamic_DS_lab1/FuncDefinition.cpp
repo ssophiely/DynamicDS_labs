@@ -43,7 +43,7 @@ Element* add(Element* head, int x) {
 // Создание множества
 Element* create_set(int n, int min, int max) {
 	if (max - min + 1 < n) {
-		create_empty_set();
+		return create_empty_set();
 	}
 	srand(time(NULL));
 	Element* head = nullptr;

@@ -1,2 +1,5 @@
-﻿  Lab1_2_Lakeeva.cpp
+﻿  main.cpp
+  FuncDefinition.cpp
+d:\Users\admin\Desktop\ПГУ\2 курс\Программирование динамических структур данных C++\DynamicDS_labs\Dynamic_DS_lab1\FuncDefinition.cpp(48,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Создание кода...
   Dynamic_DS_lab1.vcxproj -> d:\Users\admin\Desktop\ПГУ\2 курс\Программирование динамических структур данных C++\DynamicDS_labs\Dynamic_DS_lab1\x64\Debug\Dynamic_DS_lab1.exe
