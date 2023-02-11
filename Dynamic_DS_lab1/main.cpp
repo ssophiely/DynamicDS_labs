@@ -29,6 +29,7 @@ int main()
 	std::cout << "Вывод множества s2:  " << print(s2, ", ") << std::endl;
 	std::cout << "Мощность s2:  " << capacity_of(s2) << "\n\n";
 
+	system("pause");
 	return 0;
 }
 
