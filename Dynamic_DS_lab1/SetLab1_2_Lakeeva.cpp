@@ -1,4 +1,5 @@
 #include "Header.h"
+#include <ctime>
 
 // Создание пустого множества
 Element* create_empty_set() {
@@ -44,6 +45,7 @@ Element* create_set(int n, int min, int max) {
 	if (max - min + 1 < n) {
 		create_empty_set();
 	}
+	srand(time(NULL));
 	Element* head = nullptr;
 	int size = 0;
 	while (size != n) {
