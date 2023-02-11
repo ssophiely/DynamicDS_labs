@@ -48,7 +48,7 @@ Element* create_set(int n, int min, int max) {
 	int size = 0;
 	while (size != n) {
 		Element* pr_head = head;
-		head = add(head, 5);
+		head = add(head, min + rand() % (max - min + 1));
 		if (pr_head != head) {
 			size++;
 		}
