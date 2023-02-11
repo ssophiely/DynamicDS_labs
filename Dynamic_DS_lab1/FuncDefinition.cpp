@@ -1,13 +1,13 @@
-#include "Header.h"
+п»ї#include "Header.h"
 #include <ctime>
 
-// Создание пустого множества
+// РЎРѕР·РґР°РЅРёРµ РїСѓСЃС‚РѕРіРѕ РјРЅРѕР¶РµСЃС‚РІР°
 Element* create_empty_set() {
 	Element* head = nullptr;
 	return head;
 }
 
-// Проверка на пустое множество
+// РџСЂРѕРІРµСЂРєР° РЅР° РїСѓСЃС‚РѕРµ РјРЅРѕР¶РµСЃС‚РІРѕ
 bool is_empty(Element* head) {
 	if (head == nullptr) {
 		return true;
@@ -15,7 +15,7 @@ bool is_empty(Element* head) {
 	return false;
 }
 
-// Проверка принадлежности множеству
+// РџСЂРѕРІРµСЂРєР° РїСЂРёРЅР°РґР»РµР¶РЅРѕСЃС‚Рё РјРЅРѕР¶РµСЃС‚РІСѓ
 bool in_set(Element* head, int x) {
 	if (is_empty(head)) {
 		return false;
@@ -29,7 +29,7 @@ bool in_set(Element* head, int x) {
 	return false;
 }
 
-// Добавление элемента в множество
+// Р”РѕР±Р°РІР»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РІ РјРЅРѕР¶РµСЃС‚РІРѕ
 Element* add(Element* head, int x) {
 	if (!in_set(head, x)) {
 		Element* elem = new Element;
@@ -40,7 +40,7 @@ Element* add(Element* head, int x) {
 	return head;
 }
 
-// Создание множества
+// РЎРѕР·РґР°РЅРёРµ РјРЅРѕР¶РµСЃС‚РІР°
 Element* create_set(int n, int min, int max) {
 	if (max - min + 1 < n) {
 		return create_empty_set();
@@ -58,7 +58,7 @@ Element* create_set(int n, int min, int max) {
 	return head;
 }
 
-// Удаление множества
+// РЈРґР°Р»РµРЅРёРµ РјРЅРѕР¶РµСЃС‚РІР°
 Element* clear(Element* head) {
 	while (head != nullptr) {
 		Element* ptr = head;
@@ -68,7 +68,7 @@ Element* clear(Element* head) {
 	return head;
 }
 
-// Мощность множества
+// РњРѕС‰РЅРѕСЃС‚СЊ РјРЅРѕР¶РµСЃС‚РІР°
 int capacity_of(Element* head) {
 	if (is_empty(head)) {
 		return 0;
@@ -81,7 +81,7 @@ int capacity_of(Element* head) {
 	return size;
 }
 
-// Вывод множества
+// Р’С‹РІРѕРґ РјРЅРѕР¶РµСЃС‚РІР°
 std::string print(Element* head, std::string ch) {
 	if (is_empty(head)) {
 		return "";
