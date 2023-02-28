@@ -19,7 +19,7 @@ bool in_set(Element*, int);
 Element* add(Element*, int);
 
 // Создание множества
-Element* create_set(int, int, int);
+Element* create_set(int, int, int, bool);
 
 // Мощность множества
 int capacity_of(Element*);
@@ -29,3 +29,21 @@ std::string print(Element*, std::string);
 
 // Удаление множества
 Element* clear(Element*);
+
+// А - подмножество В
+bool is_subset(Element*, Element*);
+
+// Равенство двух множеств
+bool is_equal(Element*, Element*);
+
+// Объединение двух множеств
+Element* set_union (Element*, Element*);
+
+// Пересечение двух множеств
+Element* set_intersection(Element*, Element*);
+
+// Разность двух множеств
+Element* set_difference(Element*, Element*);
+
+// Симметричная разность множеств
+Element* set_symmetric_difference(Element*, Element*);

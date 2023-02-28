@@ -4,30 +4,38 @@
 int main()
 {
 	setlocale(0, "");
-	Element* s1 = create_set(10, 10, 50);
-	if (s1 != nullptr) {
-		std::cout << "Множество s1 создано\n";
+	srand(time(NULL));
+
+	Element* A = create_set(6 + rand() % 4, 20, 90, 1);
+	Element* B = create_set(6 + rand() % 4, 10, 90, 0);
+
+	std::cout << "Множество A:\n" << print(A, "  ") << "\n\n";
+	std::cout << "Множество B:\n" << print(B, "  ") << "\n\n";
+
+	if (is_subset(A, B)) {
+		std::cout << "A - подмножество B" << "\n\n";
 	}
 	else {
-		std::cout << "Множество s1 с данными параметрами не может быть создано\n";
+		std::cout << "A не подмножество B" << "\n\n";
 	}
-	std::cout << "Вывод множества s1:  " << print(s1, ", ") << std::endl;
-	std::cout << "Мощность s1:  " << capacity_of(s1) << "\n";
 
-	s1 = clear(s1);
-	std::cout << "Удаление s1\n";
-	std::cout << "Вывод множества s1:  " << print(s1, ", ") << std::endl;
-	std::cout << "Мощность s1:  " << capacity_of(s1) << "\n\n";
-
-	Element* s2 = create_set(5, 25, 27);
-	if (s2 != nullptr) {
-		std::cout << "Множество s2 создано\n";
+	if (is_equal(A, B)) {
+		std::cout << "A равно B" << "\n\n";
 	}
 	else {
-		std::cout << "Множество s2 с данными параметрами не может быть создано\n";
+		std::cout << "A не равно B" << "\n\n";
 	}
-	std::cout << "Вывод множества s2:  " << print(s2, ", ") << std::endl;
-	std::cout << "Мощность s2:  " << capacity_of(s2) << "\n\n";
+
+	std::cout << "A + B:  " << print(set_union(A, B), ", ");
+
+	std::cout << "\n\n";
+	std::cout << "A * B:  " << print(set_intersection(A, B), ", ");
+
+	std::cout << "\n\n";
+	std::cout << "A - B:  " << print(set_difference(A, B), ", ");
+
+	std::cout << "\n\n";
+	std::cout << "Симметричная разность A и B:  " << print(set_symmetric_difference(A, B), ", ") << "\n\n";
 
 	system("pause");
 	return 0;

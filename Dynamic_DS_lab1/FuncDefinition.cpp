@@ -41,21 +41,48 @@ Element* add(Element* head, int x) {
 }
 
 // Создание множества
-Element* create_set(int n, int min, int max) {
-	if (max - min + 1 < n) {
-		return create_empty_set();
-	}
-	srand(time(NULL));
-	Element* head = nullptr;
-	int size = 0;
-	while (size != n) {
-		Element* pr_head = head;
-		head = add(head, min + rand() % (max - min + 1));
-		if (pr_head != head) {
-			size++;
+Element* create_set(int n, int min, int max, bool f) {
+	// множество А
+	if (f) {
+		if ((int)((max - min + 1) / 5) + 1 < n) {
+			return create_empty_set();
 		}
+		srand(time(NULL));
+		Element* head = nullptr;
+		int size = 0;
+		while (size != n) {
+			Element* pr_head = head;
+			int el = min + rand() % (max - min + 1);
+			if (el % 5 == 0) {
+				head = add(head, el);
+				if (pr_head != head) {
+					size++;
+				}
+			}
+		}
+		return head;
 	}
-	return head;
+	// множество B
+	else
+	{
+		if ((int)((max - min + 1) / 10) + 1 < n) {
+			return create_empty_set();
+		}
+		srand(time(NULL));
+		Element* head = nullptr;
+		int size = 0;
+		while (size != n) {
+			Element* pr_head = head;
+			int el = min + rand() % (max - min + 1);
+			if (el % 10 == 0) {
+				head = add(head, el);
+				if (pr_head != head) {
+					size++;
+				}
+			}
+		}
+		return head;
+	}
 }
 
 // Удаление множества
@@ -93,4 +120,78 @@ std::string print(Element* head, std::string ch) {
 		head = head->next;
 	}
 	return s;
+}
+
+// А - подмножество В
+bool is_subset(Element* headA, Element* headB) {
+	if (is_empty(headA)) {
+		return true;
+	}
+	if (capacity_of(headB) < capacity_of(headA)) {
+		return false;
+	}
+	while (headA != nullptr) {
+		if (!in_set(headB, headA->value)) {
+			return false;
+		}
+		headA = headA->next;
+	}
+	return true;
+}
+
+// Равенство двух множеств
+bool is_equal(Element* headA, Element* headB) {
+	return (is_subset(headA, headB) && is_subset(headB, headA));
+}
+
+// Объединение двух множеств
+Element* set_union(Element* headA, Element* headB) {
+	if (is_empty(headA) && is_empty(headB)) {
+		return nullptr;
+	}
+	Element* head = nullptr;
+	while (headA != nullptr) {
+		head = add(head, headA->value);
+		headA = headA->next;
+	}
+	while (headB != nullptr) {
+		head = add(head, headB->value);
+		headB = headB->next;
+	}
+	return head;
+}
+
+// Пересечение двух множеств
+Element* set_intersection(Element* headA, Element* headB) {
+	if (is_empty(headA) || is_empty(headB)) {
+		return nullptr;
+	}
+	Element* head = nullptr;
+	while (headA != nullptr) {
+		if (in_set(headB, headA->value)) {
+			head = add(head, headA->value);
+		}
+		headA = headA->next;
+	}
+	return head;
+}
+
+// Разность двух множеств
+Element* set_difference(Element* headA, Element* headB) {
+	if (is_empty(headA)) {
+		return nullptr;
+	}
+	Element* head = nullptr;
+	while (headA != nullptr) {
+		if (!in_set(headB, headA->value)) {
+			head = add(head, headA->value);
+		}
+		headA = headA->next;
+	}
+	return head;
+}
+
+// Симметричная разность множеств
+Element* set_symmetric_difference(Element* headA, Element* headB) {
+	return set_difference(set_union(headA, headB), set_intersection(headA, headB));
 }
