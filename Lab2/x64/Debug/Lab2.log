@@ -1,0 +1,5 @@
+﻿  Set.cpp
+d:\Users\admin\Desktop\ПГУ\2 курс\ПДСД C++\DynamicDS_labs\Lab2\Set.cpp(26,13): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+d:\Users\admin\Desktop\ПГУ\2 курс\ПДСД C++\DynamicDS_labs\Lab2\Set.cpp(47,13): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+x64\Debug\Set.obj : warning LNK4042: объект указан более одного раза; лишние не учитываются
+  Lab2.vcxproj -> d:\Users\admin\Desktop\ПГУ\2 курс\ПДСД C++\DynamicDS_labs\Lab2\x64\Debug\Lab2.exe
