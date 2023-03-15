@@ -1,12 +1,12 @@
-#include "set.h"
+п»ї#include "set.h"
 #include <ctime>
 
-// Конструктор без параметров
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ Р±РµР· РїР°СЂР°РјРµС‚СЂРѕРІ
 Set::Set() {
 	head = nullptr;
 }
 
-// Конструктор копирования
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
 Set::Set(const Set& set) {
 	head = nullptr;
 	Element* ptr = set.head;
@@ -16,9 +16,9 @@ Set::Set(const Set& set) {
 	}
 }
 
-// Конструктор с параметрами
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
 Set::Set(int n, int min, int max, bool f) {
-	// множество А
+	// РјРЅРѕР¶РµСЃС‚РІРѕ Рђ
 	if (f) {
 		if ((int)((max - min + 1) / 5) + 1 < n) {
 			head = nullptr;
@@ -38,7 +38,7 @@ Set::Set(int n, int min, int max, bool f) {
 			}
 		}
 	}
-	// множество B
+	// РјРЅРѕР¶РµСЃС‚РІРѕ B
 	else
 	{
 		if ((int)((max - min + 1) / 10) + 1 < n) {
@@ -61,7 +61,7 @@ Set::Set(int n, int min, int max, bool f) {
 	}
 }
 
-// Проверка на пустое множество
+// РџСЂРѕРІРµСЂРєР° РЅР° РїСѓСЃС‚РѕРµ РјРЅРѕР¶РµСЃС‚РІРѕ
 bool Set::is_empty() {
 	if (head == nullptr) {
 		return true;
@@ -69,7 +69,7 @@ bool Set::is_empty() {
 	return false;
 }
 
-// Проверка принадлежности множеству
+// РџСЂРѕРІРµСЂРєР° РїСЂРёРЅР°РґР»РµР¶РЅРѕСЃС‚Рё РјРЅРѕР¶РµСЃС‚РІСѓ
 bool Set::in_set(int x) {
 	if (is_empty()) {
 		return false;
@@ -84,7 +84,7 @@ bool Set::in_set(int x) {
 	return false;
 }
 
-// Добавление элемента в множество
+// Р”РѕР±Р°РІР»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РІ РјРЅРѕР¶РµСЃС‚РІРѕ
 void Set::add(int x) {
 	if (!in_set(x)) {
 		Element* elem = new Element;
@@ -94,7 +94,7 @@ void Set::add(int x) {
 	}
 }
 
-// Удаление множества
+// РЈРґР°Р»РµРЅРёРµ РјРЅРѕР¶РµСЃС‚РІР°
 void Set::clear() {
 	while (head != nullptr) {
 		Element* ptr = head;
@@ -103,7 +103,7 @@ void Set::clear() {
 	}
 }
 
-// Мощность множества
+// РњРѕС‰РЅРѕСЃС‚СЊ РјРЅРѕР¶РµСЃС‚РІР°
 int Set::size() {
 	if (is_empty()) {
 		return 0;
@@ -117,7 +117,7 @@ int Set::size() {
 	return size;
 }
 
-// Вывод множества
+// Р’С‹РІРѕРґ РјРЅРѕР¶РµСЃС‚РІР°
 std::string Set::print(std::string ch) {
 	if (is_empty()) {
 		return "";
@@ -132,7 +132,7 @@ std::string Set::print(std::string ch) {
 	return s;
 }
 
-// А - подмножество В
+// Рђ - РїРѕРґРјРЅРѕР¶РµСЃС‚РІРѕ Р’
 bool Set::is_subset(Set setB) {
 	if (is_empty()) {
 		return true;
@@ -150,12 +150,12 @@ bool Set::is_subset(Set setB) {
 	return true;
 }
 
-// Равенство двух множеств
+// Р Р°РІРµРЅСЃС‚РІРѕ РґРІСѓС… РјРЅРѕР¶РµСЃС‚РІ
 bool Set::is_equal(Set setB) {
 	return (is_subset(setB) && setB.is_subset(*this));
 }
 
-// Объединение двух множеств
+// РћР±СЉРµРґРёРЅРµРЅРёРµ РґРІСѓС… РјРЅРѕР¶РµСЃС‚РІ
 Set Set::set_union(Set setB) {
 	if (is_empty() && setB.is_empty()) {
 		return Set();
@@ -174,7 +174,7 @@ Set Set::set_union(Set setB) {
 	return newset;
 }
 
-// Пересечение двух множеств
+// РџРµСЂРµСЃРµС‡РµРЅРёРµ РґРІСѓС… РјРЅРѕР¶РµСЃС‚РІ
 Set  Set::set_intersection(Set setB) {
 	if (is_empty() || setB.is_empty()) {
 		return Set();
@@ -190,7 +190,7 @@ Set  Set::set_intersection(Set setB) {
 	return newset;
 }
 
-// Разность двух множеств
+// Р Р°Р·РЅРѕСЃС‚СЊ РґРІСѓС… РјРЅРѕР¶РµСЃС‚РІ
 Set Set::set_difference(Set setB) {
 	if (is_empty()) {
 		return Set();
@@ -206,7 +206,7 @@ Set Set::set_difference(Set setB) {
 	return newset;
 }
 
-// Симметричная разность множеств
+// РЎРёРјРјРµС‚СЂРёС‡РЅР°СЏ СЂР°Р·РЅРѕСЃС‚СЊ РјРЅРѕР¶РµСЃС‚РІ
 Set Set::set_symmetric_difference(Set setB) {
 	return set_union(setB).set_difference(set_intersection(setB));
 }
