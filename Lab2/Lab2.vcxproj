@@ -128,8 +128,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="set.h" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Set.cpp" />
+    <ClCompile Include="OOP_Set_Lakeeva.cpp" />
+    <ClCompile Include="SetLab3_Lakeeva.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

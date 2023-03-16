@@ -17,45 +17,21 @@ Set::Set(const Set& set) {
 }
 
 // Конструктор с параметрами
-Set::Set(int n, int min, int max, bool f) {
-	// множество А
-	if (f) {
-		if ((int)((max - min + 1) / 5) + 1 < n) {
-			head = nullptr;
-			return;
-		}
-		srand(time(NULL));
+Set::Set(int n, int min, int max, int f) {
+	if ((int)((max - min + 1) / f) + 1 < n) {
 		head = nullptr;
-		int size = 0;
-		while (size != n) {
-			Element* pr_head = head;
-			int el = min + rand() % (max - min + 1);
-			if (el % 5 == 0) {
-				add(el);
-				if (pr_head != head) {
-					size++;
-				}
-			}
-		}
+		return;
 	}
-	// множество B
-	else
-	{
-		if ((int)((max - min + 1) / 10) + 1 < n) {
-			head = nullptr;
-			return;
-		}
-		srand(time(NULL));
-		head = nullptr;
-		int size = 0;
-		while (size != n) {
-			Element* pr_head = head;
-			int el = min + rand() % (max - min + 1);
-			if (el % 10 == 0) {
-				add(el);
-				if (pr_head != head) {
-					size++;
-				}
+	srand(time(NULL));
+	head = nullptr;
+	int size = 0;
+	while (size != n) {
+		Element* pr_head = head;
+		int el = min + rand() % (max - min + 1);
+		if (el % f == 0) {
+			add(el);
+			if (pr_head != head) {
+				size++;
 			}
 		}
 	}

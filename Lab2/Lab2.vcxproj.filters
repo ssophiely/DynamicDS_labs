@@ -15,13 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="OOP_Set_Lakeeva.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="set.h">
       <Filter>Файлы заголовков</Filter>
     </ClCompile>
-    <ClCompile Include="Set.cpp">
+    <ClCompile Include="SetLab3_Lakeeva.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

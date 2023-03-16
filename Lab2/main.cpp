@@ -6,8 +6,8 @@ int main()
 	setlocale(0, "");
 	srand(time(NULL));
 
-	Set A = Set(6 + rand() % 4, 20, 90, 1);
-	Set B = Set(6 + rand() % 4, 10, 90, 0);
+	Set A = Set(6 + rand() % 4, 20, 90, 5);
+	Set B = Set(6 + rand() % 4, 10, 90, 10);
 
 	std::cout << "Мощность A:  " << A.size() << "\n\n";
 	std::cout << "Мощность B:  " << B.size() << "\n\n";
