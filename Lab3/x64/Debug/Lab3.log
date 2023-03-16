@@ -1,0 +1,7 @@
+﻿  SetLab4_Lakeeva.cpp
+D:\Users\admin\Desktop\ПГУ\2 курс\ПДСД C++\DynamicDS_labs\Lab3\SetLab4_Lakeeva.cpp(18,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+D:\Users\admin\Desktop\ПГУ\2 курс\ПДСД C++\DynamicDS_labs\Lab3\SetLab4_Lakeeva.cpp(53,21): warning C4267: return: преобразование из "size_t" в "int"; возможна потеря данных
+  Set_Cont_List_Lakeeva.cpp
+D:\Users\admin\Desktop\ПГУ\2 курс\ПДСД C++\DynamicDS_labs\Lab3\Set_Cont_List_Lakeeva.cpp(7,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Создание кода...
+  Lab3.vcxproj -> D:\Users\admin\Desktop\ПГУ\2 курс\ПДСД C++\DynamicDS_labs\Lab3\x64\Debug\Lab3.exe
