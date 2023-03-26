@@ -1,10 +1,7 @@
 #pragma once
 #include <string>
+#include "Hstruct_list.h"
 
-struct Element {
-	int value;
-	Element* next;
-};
 
 class Set {
 private:

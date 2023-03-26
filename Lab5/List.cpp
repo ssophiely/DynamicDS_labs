@@ -2,16 +2,16 @@
 #include <ctime>
 
 // Конструктор без параметров
-Set::Set() {
+SetL::SetL() {
 }
 
 // Конструктор копирования
-Set::Set(const Set& set) {
+SetL::SetL(const SetL& set) {
 	m_set = (set.m_set);
 }
 
 // Конструктор с параметрами
-Set::Set(int n, int min, int max, int f) {
+SetL::SetL(int n, int min, int max, int f) {
 	if ((int)((max - min + 1) / f) + 1 < n) {
 		return;
 	}
@@ -25,12 +25,12 @@ Set::Set(int n, int min, int max, int f) {
 }
 
 // Проверка на пустое множество
-bool Set::is_empty() {
+bool SetL::is_empty() {
 	return m_set.empty();
 }
 
 // Проверка принадлежности множеству
-bool Set::in_set(int x) {
+bool SetL::in_set(int x) {
 	if (std::find(m_set.begin(), m_set.end(), x) == m_set.end()) {
 		return false;
 	}
@@ -38,23 +38,23 @@ bool Set::in_set(int x) {
 }
 
 // Добавление элемента в множество
-void Set::add(int x) {
+void SetL::add(int x) {
 	if (!in_set(x))
 		m_set.push_back(x);
 }
 
 // Удаление множества
-void Set::clear() {
+void SetL::clear() {
 	m_set.clear();
 }
 
 // Мощность множества
-int Set::size() {
+int SetL::size() {
 	return m_set.size();
 }
 
 // Вывод множества
-std::string Set::print(std::string ch) {
+std::string SetL::print(std::string ch) {
 	if (is_empty()) {
 		return "";
 	}
@@ -66,7 +66,7 @@ std::string Set::print(std::string ch) {
 }
 
 // А - подмножество В
-bool Set::is_subset(Set setB) {
+bool SetL::is_subset(SetL setB) {
 	for (list<int>::iterator it = m_set.begin(); it != m_set.end(); it++) {
 		if (!setB.in_set(*it)) {
 			return false;
@@ -76,16 +76,16 @@ bool Set::is_subset(Set setB) {
 }
 
 // Равенство двух множеств
-bool Set::is_equal(Set setB) {
+bool SetL::is_equal(SetL setB) {
 	return (is_subset(setB) && setB.is_subset(*this));
 }
 
 // Объединение двух множеств
-Set Set::set_union(Set setB) {
+SetL SetL::set_union(SetL setB) {
 	if (is_empty() && setB.is_empty()) {
-		return Set();
+		return SetL();
 	}
-	Set newset = Set();
+	SetL newset = SetL();
 	for (list<int>::iterator it = m_set.begin(); it != m_set.end(); it++) {
 		newset.add(*it);
 	}
@@ -96,11 +96,11 @@ Set Set::set_union(Set setB) {
 }
 
 // Пересечение двух множеств
-Set  Set::set_intersection(Set setB) {
+SetL  SetL::set_intersection(SetL setB) {
 	if (is_empty() || setB.is_empty()) {
-		return Set();
+		return SetL();
 	}
-	Set newset = Set();
+	SetL newset = SetL();
 	for (list<int>::iterator it = m_set.begin(); it != m_set.end(); it++) {
 		if (setB.in_set(*it)) {
 			newset.add(*it);
@@ -110,11 +110,11 @@ Set  Set::set_intersection(Set setB) {
 }
 
 // Разность двух множеств
-Set Set::set_difference(Set setB) {
+SetL SetL::set_difference(SetL setB) {
 	if (is_empty()) {
-		return Set();
+		return SetL();
 	}
-	Set newset = Set();
+	SetL newset = SetL();
 	for (list<int>::iterator it = m_set.begin(); it != m_set.end(); it++) {
 		if (!setB.in_set(*it)) {
 			newset.add(*it);
@@ -124,10 +124,10 @@ Set Set::set_difference(Set setB) {
 }
 
 // Симметричная разность множеств
-Set Set::set_symmetric_difference(Set setB) {
+SetL SetL::set_symmetric_difference(SetL setB) {
 	return set_union(setB).set_difference(set_intersection(setB));
 }
 
-Set::~Set() {
+SetL::~SetL() {
 	clear();
 }

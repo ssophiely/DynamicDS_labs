@@ -19,7 +19,7 @@ bool in_set(Element*, int);
 Element* add(Element*, int);
 
 // Создание множества
-Element* create_set(int, int, int, bool);
+Element* create_set(int, int, int, int);
 
 // Мощность множества
 int capacity_of(Element*);

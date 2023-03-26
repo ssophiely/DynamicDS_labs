@@ -41,48 +41,24 @@ Element* add(Element* head, int x) {
 }
 
 // Создание множества
-Element* create_set(int n, int min, int max, bool f) {
-	// множество А
-	if (f) {
-		if ((int)((max - min + 1) / 5) + 1 < n) {
-			return create_empty_set();
-		}
-		srand(time(NULL));
-		Element* head = nullptr;
-		int size = 0;
-		while (size != n) {
-			Element* pr_head = head;
-			int el = min + rand() % (max - min + 1);
-			if (el % 5 == 0) {
-				head = add(head, el);
-				if (pr_head != head) {
-					size++;
-				}
+Element* create_set(int n, int min, int max, int f) {
+	if ((int)((max - min + 1) /f) + 1 < n) {
+		return create_empty_set();
+	}
+	srand(time(NULL));
+	Element* head = nullptr;
+	int size = 0;
+	while (size != n) {
+		Element* pr_head = head;
+		int el = min + rand() % (max - min + 1);
+		if (el % f == 0) {
+			head = add(head, el);
+			if (pr_head != head) {
+				size++;
 			}
 		}
-		return head;
 	}
-	// множество B
-	else
-	{
-		if ((int)((max - min + 1) / 10) + 1 < n) {
-			return create_empty_set();
-		}
-		srand(time(NULL));
-		Element* head = nullptr;
-		int size = 0;
-		while (size != n) {
-			Element* pr_head = head;
-			int el = min + rand() % (max - min + 1);
-			if (el % 10 == 0) {
-				head = add(head, el);
-				if (pr_head != head) {
-					size++;
-				}
-			}
-		}
-		return head;
-	}
+	return head;
 }
 
 // Удаление множества

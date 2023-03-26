@@ -3,19 +3,19 @@
 #include <string>
 using namespace std;
 
-class Set {
+class SetS {
 private:
 	set <int> m_set;
 public:
 
 	// Конструктор без параметров
-	Set();
+	SetS();
 
 	// Конструктор копирования
-	Set(const Set&);
+	SetS(const SetS&);
 
 	// Конструктор с параметрами
-	Set(int, int, int, int);
+	SetS(int, int, int, int);
 
 	// Проверка на пустое мнржество
 	bool is_empty();
@@ -36,24 +36,24 @@ public:
 	string print(string);
 
 	// А - подмножество В
-	bool is_subset(Set);
+	bool is_subset(SetS);
 
 	// Равенство двух множеств
-	bool is_equal(Set);
+	bool is_equal(SetS);
 
 	// Объединение двух множеств
-	Set set_union(Set);
+	SetS set_union(SetS);
 
 	// Пересечение двух множеств
-	Set set_intersection(Set);
+	SetS set_intersection(SetS);
 
 	// Разность двух множеств
-	Set set_difference(Set);
+	SetS set_difference(SetS);
 
 	// Симметричная разность множеств
-	Set set_symmetric_difference(Set);
+	SetS set_symmetric_difference(SetS);
 
 	// Деструктор
-	~Set();
+	~SetS();
 };
 
