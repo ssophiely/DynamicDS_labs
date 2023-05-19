@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="Set_Cont_Set_Lakeeva.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Set.cpp">
+    <ClCompile Include="SetLab5_Lakeeva.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

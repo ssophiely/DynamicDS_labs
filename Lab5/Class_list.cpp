@@ -14,7 +14,7 @@ Set::Set(const Set& set) {
 		add(ptr->value);
 		ptr = ptr->next;
 	}
-}
+ }
 
 // Конструктор с параметрами
 Set::Set(int n, int min, int max, int f) {
